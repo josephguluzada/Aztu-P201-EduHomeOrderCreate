@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+@model MemberRegisterViewModel
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <img />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Register start -->
+<div class="register-area pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <div class="login">
+                    <div class="login-form-container">
+                        <div class="login-text">
+                            <h2>Register</h2>
+                        </div>
+                        <div class="login-form">
+                            <form asp-action="register" asp-controller="account" method="post">
+                                <div class="col-md-12 col-12 mb--15">
+                                    <label asp-for="Username">Username</label>
+                                    <input class="mb-0 form-control" asp-for="Username"
+                                           placeholder="Enter your username">
+                                    <span asp-validation-for="Username" class="text-danger"></span>
+                                </div>
+                                <div class="col-12">
+                                    <label asp-for="Fullname">Fullname</label>
+                                    <input class="mb-0 form-control" asp-for="Fullname" placeholder="Enter Your Fullname  Here..">
+                                    <span asp-validation-for="Fullname" class="text-danger"></span>
+                                </div>
+                                <br />
+                                <div class="col-12">
+                                    <label asp-for="Email">Email</label>
+                                    <input class="mb-0 form-control" asp-for="Email" placeholder="Enter Your Email Address Here..">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+
+                                <br />
+
+                                <div class="col-lg-6 ">
+                                    <label asp-for="Password">Password</label>
+                                    <input class="mb-0 form-control" asp-for="Password" placeholder="Enter your password">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <br />
+
+                                <div class="col-lg-6 ">
+                                    <label asp-for="RepeatPassword">Repeat Password</label>
+                                    <input class="mb-0 form-control" asp-for="RepeatPassword" placeholder="Repeat your password">
+                                    <span asp-validation-for="RepeatPassword" class="text-danger"></span>
+                                </div>
+                                <br />
+
+                                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                <div class="button-box">
+                                    <button type="submit" class="default-btn">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

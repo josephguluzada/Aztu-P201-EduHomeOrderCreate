@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@model NoticeBoard
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="d-flex">
+                <h2>NoticeBoard</h2>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">DateTime</th>
+                        <th scope="col">Desc</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>@Model.Date</td>
+                            <td>@Model.Desc</td>
+                            <td>
+                                <form asp-action="delete" method="post">
+                                    <input name="Id" value="@Model.Id" type="hidden" />
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                                <a asp-action="index" class="btn btn-info">Go to back</a>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

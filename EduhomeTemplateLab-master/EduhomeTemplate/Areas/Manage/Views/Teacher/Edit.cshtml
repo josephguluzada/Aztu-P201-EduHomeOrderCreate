@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "Edit";
+}
+@model Teacher
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>NoticeBoard</h2>
+        </div>
+        <div class="col-lg-8 mx-auto">
+            <form method="post" asp-action="edit" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label asp-for="Title">Faculty</label>
+                    <input type="text" class="form-control" asp-for="Title" placeholder="Enter Title ">
+                    <span class="text-danger" asp-validation-for="Title"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Level">Level</label>
+                    <input type="text" class="form-control" asp-for="Level" placeholder="Enter Level ">
+                    <span class="text-danger" asp-validation-for="Level"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Desc">Desc</label>
+                    <input type="text" class="form-control" asp-for="Desc" placeholder="Enter Desc ">
+                    <span class="text-danger" asp-validation-for="Desc"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DescLitlle">DescLitlle</label>
+                    <input type="text" class="form-control" asp-for="DescLitlle" placeholder="Enter DescLitlle ">
+                    <span class="text-danger" asp-validation-for="DescLitlle"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Experience">Experience</label>
+                    <input type="text" class="form-control" asp-for="Experience" placeholder="Enter Experience ">
+                    <span class="text-danger" asp-validation-for="Experience"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Degree">Faculty</label>
+                    <input type="text" class="form-control" asp-for="Degree" x placeholder="Enter Degree ">
+                    <span class="text-danger" asp-validation-for="Degree"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Hobbies">Hobbies</label>
+                    <input type="text" class="form-control" asp-for="Hobbies" placeholder="Enter Hobbies ">
+                    <span class="text-danger" asp-validation-for="Hobbies"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Faculty">Faculty</label>
+                    <input type="text" class="form-control" asp-for="Faculty" placeholder="Enter Faculty ">
+                    <span class="text-danger" asp-validation-for="Faculty"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImageFile">ImageFile</label>
+                    <input class="form-control" asp-for="ImageFile">
+                    <span class="text-danger" asp-validation-for="ImageFile"></span>
+                </div>
+                @if (Model.Image!=null)
+                {
+                    <div class="form-group image-box" style="position:relative">
+                        <img style="width:200px; height:100px;" src="~/Uploads/Teachers/@Model.Image" />
+                        <i style=" position:absolute; font-size:20px; top:-7px; left:150px; cursor:pointer; color:red" class="fas fa-times image-delete-btn"></i>
+                    </div>
+                }
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a class="btn btn-info" asp-controller="teacher" asp-action="index">Back</a>
+            </form>
+        </div>
+    </div>
+</div>
+

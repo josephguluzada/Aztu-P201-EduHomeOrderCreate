@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "Profil";
+}
+@model MemberProfileViewModel
+
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                <form method="post" asp-action="profil">
+                    <div class="row ">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label class="labels">Username</label><input asp-for="Username" class="form-control">
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="labels">Fullname</label><input asp-for="Fullname" class="form-control" placeholder="Fullname">
+                                <span asp-validation-for="Fullname" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12"><label class="labels">Email </label><input asp-for="Email" class="form-control" placeholder="enter email  "></div>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12"><label class="labels">Mobile Number</label><input asp-for="PhoneNumber" class="form-control" placeholder="enter phone number"></div>
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">Born/Date</label><input asp-for="BornDate" class="form-control"></div>
+                            <span asp-validation-for="BornDate" class="text-danger"></span>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">Current Password</label><input asp-for="CurrentPassword" class="form-control"></div>
+                            <span asp-validation-for="CurrentPassword" class="text-danger"></span>
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">New Password</label><input asp-for="NewPassword" class="form-control"></div>
+                            <span asp-validation-for="NewPassword" class="text-danger"></span>
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">Confirm New Password</label><input asp-for="ConfirmNewPassword" class="form-control"></div>
+                            <span asp-validation-for="ConfirmNewPassword" class="text-danger"></span>
+
+                        </div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

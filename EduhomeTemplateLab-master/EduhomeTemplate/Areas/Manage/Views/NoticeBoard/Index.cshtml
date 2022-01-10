@@ -1,0 +1,46 @@
+﻿@model List<NoticeBoard>
+@{
+    ViewData["Title"] = "NoticeBoard";
+    int count = 0;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="d-flex">
+                <h2>NoticeBoard</h2>
+                <a class="btn btn-primary" asp-action="create">Create new Notice</a>
+            </div>
+         
+        </div>
+        <div class="col-lg-12">
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">DateTime</th>
+                        <th scope="col">Desc</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (NoticeBoard item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <th scope="row">@count</th>
+                            <td>@item.Date</td>
+                            <td>@item.Desc</td>
+                            <td><a asp-action="edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a></td>
+                            <td><a asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+

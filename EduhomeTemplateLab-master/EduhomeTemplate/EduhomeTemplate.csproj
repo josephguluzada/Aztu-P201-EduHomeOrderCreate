@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\about\about.webp" />
+    <None Include="wwwroot\img\blog\blog1.webp" />
+    <None Include="wwwroot\img\blog\blog2.webp" />
+    <None Include="wwwroot\img\blog\blog3.webp" />
+    <None Include="wwwroot\img\course\course1.webp" />
+    <None Include="wwwroot\img\course\course2.webp" />
+    <None Include="wwwroot\img\course\course3.webp" />
+    <None Include="wwwroot\img\event\event1.webp" />
+    <None Include="wwwroot\img\event\event2.webp" />
+    <None Include="wwwroot\img\event\event3 %281%29.webp" />
+    <None Include="wwwroot\img\event\event3.webp" />
+    <None Include="wwwroot\img\notice\video.webp" />
+    <None Include="wwwroot\img\slider\slider2.webp" />
+    <None Include="wwwroot\img\slider\slider3.webp" />
+    <None Include="wwwroot\img\testimonial\testimonial.webp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.22">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Uploads\Teachers\" />
+  </ItemGroup>
+
+</Project>
