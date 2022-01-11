@@ -16,7 +16,7 @@ namespace EduhomeTemplate.ViewModels
         [StringLength(maximumLength: 20)]
         public string Fullname { get; set; }
         [Required]
-        [StringLength(maximumLength: 20)]
+        [StringLength(maximumLength: 50)]
         public string Email { get; set; }
         [Required]
         [DataType(DataType.Password)]

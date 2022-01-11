@@ -1,4 +1,5 @@
 ﻿using EduhomeTemplate.Models;
+using EduhomeTemplate.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,11 +13,13 @@ namespace EduhomeTemplate.Controllers
     {
         private readonly DataContext _context;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IEmailService _emailService;
 
-        public OrderController(DataContext context,UserManager<AppUser> userManager)
+        public OrderController(DataContext context,UserManager<AppUser> userManager,IEmailService emailService)
         {
             _context = context;
             _userManager = userManager;
+            _emailService = emailService;
         }
 
         public async Task<IActionResult> Buy(int id)
@@ -40,6 +43,8 @@ namespace EduhomeTemplate.Controllers
 
             _context.Orders.Add(order);
             _context.SaveChanges();
+
+            _emailService.Send(order.AppUser.Email, "Sifaris Qebul Olundu", "Bizi secdiyiniz ucun tesekkurler");
 
             return RedirectToAction("index", "home");
         }
